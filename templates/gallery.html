@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>My Top Shots</h1>
+    <a href="/">← Back to Home</a><br><br>
+    {% for photo in photos %}
+      <img src="{{ url_for('static', filename='images/' + photo[0]) }}" class="gallery">
+      <p>{{ photo[1] }}</p>
+    {% endfor %}
+  </div>
+</body>
+</html>
